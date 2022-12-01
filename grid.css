@@ -31,6 +31,45 @@ section {
   font-size:1.500em;
 } */
 
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+.name{
+  display: flex;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.logo {
+  display: block;
+  width: 82px;
+  height: 70px;
+  background-size: 100px 82px;
+    padding: 0 20px 0 0;
+}
+
+@keyframes example1 {
+  from {scale:1;}
+  to {scale:1.2;}
+}
+
+@keyframes example2 {
+  from {background-color: #FFF;}
+  to {background-color: #D9D9D9;}
+}
+
+@keyframes example3 {
+  from {color: #B04912;}
+  to {color: #000000;}
+}
+
+
 .header{
   background: #34B3AE;
   overflow: hidden;
@@ -62,15 +101,18 @@ background-color: #FFF;
   font-family: "Montserrat";
 }
 
-.nav ul li a:hover {
-  color: #B04912;
-  transform: scale(1.2);
+.nav a:hover{
+    color: #B04912;
+}
+.nav ul li:hover {
+  animation: example1 linear 0.2s  normal forwards;
+
 }
 
 .nav a:active{
   color: #FFFFFF;
-  background-color: #D9D9D9;
-  transform: scale(1.2);
+animation: example2 linear 0.2s  normal forwards;
+animation: example3 linear 0.2s  normal forwards;
 }
 
 .nav{
@@ -160,7 +202,7 @@ max-width: 100%;
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .wrapper {
     -webkit-column-count: 1;
     -moz-column-count: 1;
@@ -180,8 +222,8 @@ max-width: 100%;
     background: #fff url(../images/bgimg.jpg) no-repeat center center
 }
 .view .mask, .view .content {
-    width: 300px;
-    height: auto;
+    width: 100%;
+    height: 100%;
     position: absolute;
     overflow: hidden;
     top: 0;
@@ -196,7 +238,7 @@ max-width: 100%;
     color: #fff;
     text-align: left;
     position: relative;
-    font-size: 17px;
+    font-size: 1em;
     padding: 10px;
     background: rgba(0, 0, 0, 0.8);
     margin: 20px 0 0 0
@@ -204,11 +246,11 @@ max-width: 100%;
 .view p {
     font-family: Georgia, serif;
     font-style: italic;
-    font-size: 12px;
+    font-size: 1em;
     position: relative;
     color: #fff;
     padding: 10px 20px 20px;
-    text-align: center
+    text-align: left;
 }
 .view a.info {
     display: inline-block;
@@ -219,7 +261,7 @@ max-width: 100%;
     text-transform: uppercase;
     box-shadow: 0 0 1px #000
 }
-.view a.info:hover {
+.view a.info:active {
     box-shadow: 0 0 5px #000
 }
 
@@ -243,21 +285,21 @@ max-width: 100%;
 }
 
 
-.view-first:hover img {
+.view-first:active img {
 	transform: scale(1.1);
 }
-.view-first:hover .mask {
+.view-first:active .mask {
 	opacity: 1;
 }
-.view-first:hover h2,
-.view-first:hover p,
-.view-first:hover a.info {
+.view-first:active h2,
+.view-first:active p,
+.view-first:active a.info {
     opacity: 1;
     transform: translateY(0px);
 }
-.view-first:hover p {
+.view-first:active p {
     transition-delay: 0.1s;
 }
-.view-first:hover a.info {
+.view-first:active a.info {
     transition-delay: 0.2s;
 }
